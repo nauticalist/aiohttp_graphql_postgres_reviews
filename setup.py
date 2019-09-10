@@ -24,10 +24,10 @@ def read_version():
 install_requires = [
     'aiohttp==3.6.0',
     'aiohttp_cors==0.7.0',
-    'alembic==0.9.10',
+    'alembic==1.1.0',
     'aiopg==0.16.0',
-    'SQLAlchemy==1.2.9',
-    'psycopg2-binary==2.7.5',
+    'SQLAlchemy==1.3.8',
+    'psycopg2-binary==2.8.3',
     'gunicorn==19.9.0',
     'graphql-core<3,>= 2.1',
     'graphene==2.1.8',
