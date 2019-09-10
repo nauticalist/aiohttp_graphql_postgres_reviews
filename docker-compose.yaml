@@ -1,0 +1,30 @@
+version: '3.2'
+
+services:
+  postgres:
+      image: postgres:10
+      container_name: info_postgres
+      volumes:
+      - "dbdata:/var/lib/postgresql/data"
+      environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=postgres
+          - POSTGRES_DB=postgres
+      ports:
+      - 5432:5432
+
+
+  info:
+    build: .
+    container_name: info
+    volumes:
+      - ./:/app
+    command: gunicorn info.app:app -b :8080 --worker-class aiohttp.GunicornWebWorker --reload --access-logfile -
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+
+volumes:
+  dbdata:
