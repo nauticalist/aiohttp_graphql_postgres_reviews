@@ -22,7 +22,7 @@ def read_version():
 
 
 install_requires = [
-    'aiohttp==3.6.0',
+    'aiohttp==3.7.4',
     'aiohttp_cors==0.7.0',
     'alembic==1.1.0',
     'aiopg==0.16.0',
